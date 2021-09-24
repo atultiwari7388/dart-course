@@ -25,7 +25,7 @@ void main() {
 /**
  * Rules for naming Variables
  * 
- * -- Variables name cann consist of letter and alphabets
+ * -- Variables name can consist of letter and alphabets
  * -- keyword are not  allowed to use as a variable name.
  * -- Blank space are not allowed  in variable names.
  * -- First character of variable should always be alphabets.
@@ -47,6 +47,7 @@ void main() {
 // compile time constants
 
   const constants = 7;
+  print(constants);
 //  constantvalue = 3;
 
   final currentDate = DateTime.now().toUtc().toString();
