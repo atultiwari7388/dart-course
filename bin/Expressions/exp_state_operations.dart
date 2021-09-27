@@ -5,7 +5,7 @@ void main() {
   print("Hello");
   print("Hello 2");
 
-// Expressions are things the do nothing
+// Expressions are things they do nothing
 
   4;
   "Do Nothing";
