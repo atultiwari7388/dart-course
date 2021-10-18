@@ -44,38 +44,76 @@
 
 // abstract class
 
-import 'dart:math';
+// import 'dart:math';
+
+// void main() {
+//   final square = Square(side: 8.340);
+//   print(square.area());
+
+//   final circle = Circle(radius: 8.87);
+//   print(circle.area());
+// }
+
+// void printArea(Shape shape) {
+//   print(shape.area());
+// }
+
+// abstract class Shape {
+//   double area();
+// }
+
+// class Square implements Shape {
+//   Square({
+//     this.side,
+//   });
+//   final double? side;
+
+//   @override
+//   double area() => side! * side!;
+// }
+
+// class Circle implements Shape {
+//   Circle({this.radius});
+//   final double? radius;
+
+//   @override
+//   double area() => radius! * radius! * pi;
+// }
+
+// mixins
+
+mixin BMI {
+  double calculateBMI(double height, double weight) {
+    return weight / (height * height);
+  }
+}
+
+class Person with BMI {
+  final String? name;
+  final int? age;
+  final double? height;
+  final double? weight;
+
+  Person({this.name, this.age, this.height, this.weight});
+
+  double get bmi => calculateBMI(height!, weight!);
+}
 
 void main() {
-  final square = Square(side: 8.340);
-  print(square.area());
-
-  final circle = Circle(radius: 8.87);
-  print(circle.area());
+  final person = Person(name: "Atul", age: 20, height: 1.5, weight: 60);
+  print(person.bmi);
 }
 
-void printArea(Shape shape) {
-  print(shape.area());
-}
+// classes and mixins can't define the same variables and method name;
+// create a mixin with the name of mixins
+// Create a mixin with variables and methods
+// add mixin to an existing class using with keyword....
+// Call mixin variables and methods as needed..
 
-abstract class Shape {
-  double area();
-}
+/** Why Mixins?
+ *
+ * Extract and reuse functionality in multiple classes.
+ *
+ */
 
-class Square implements Shape {
-  Square({
-    this.side,
-  });
-  final double? side;
 
-  @override
-  double area() => side! * side!;
-}
-
-class Circle implements Shape {
-  Circle({this.radius});
-  final double? radius;
-
-  @override
-  double area() => radius! * radius! * pi;
-}
