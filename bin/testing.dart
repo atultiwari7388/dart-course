@@ -80,40 +80,49 @@
 //   double area() => radius! * radius! * pi;
 // }
 
-// mixins
+// // mixins
 
-mixin BMI {
-  double calculateBMI(double height, double weight) {
-    return weight / (height * height);
-  }
-}
+// mixin BMI {
+//   double calculateBMI(double height, double weight) {
+//     return weight / (height * height);
+//   }
+// }
 
-class Person with BMI {
-  final String? name;
-  final int? age;
-  final double? height;
-  final double? weight;
+// class Person with BMI {
+//   final String? name;
+//   final int? age;
+//   final double? height;
+//   final double? weight;
 
-  Person({this.name, this.age, this.height, this.weight});
+//   Person({this.name, this.age, this.height, this.weight});
 
-  double get bmi => calculateBMI(height!, weight!);
-}
+//   double get bmi => calculateBMI(height!, weight!);
+// }
 
+// void main() {
+//   final person = Person(name: "Atul", age: 20, height: 1.5, weight: 60);
+//   print(person.bmi);
+// }
+
+// // classes and mixins can't define the same variables and method name;
+// // create a mixin with the name of mixins
+// // Create a mixin with variables and methods
+// // add mixin to an existing class using with keyword....
+// // Call mixin variables and methods as needed..
+
+// /** Why Mixins?
+//  *
+//  * Extract and reuse functionality in multiple classes.
+//  *
+//  */
+
+// lists
 void main() {
-  final person = Person(name: "Atul", age: 20, height: 1.5, weight: 60);
-  print(person.bmi);
+  var primeNumbers = [2, 5, 7, 9];
+
+  primeNumbers.addAll([13, 15, 17, 19]);
+
+  primeNumbers.add(23);
+
+  print(primeNumbers);
 }
-
-// classes and mixins can't define the same variables and method name;
-// create a mixin with the name of mixins
-// Create a mixin with variables and methods
-// add mixin to an existing class using with keyword....
-// Call mixin variables and methods as needed..
-
-/** Why Mixins?
- *
- * Extract and reuse functionality in multiple classes.
- *
- */
-
-
